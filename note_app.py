@@ -18,3 +18,14 @@ def indexPage():
 def home_page():
     home_content = get_html("home")
     return home_content
+
+@app.route("/addNote")
+def add_note():
+    if(flask.request.args.get("noteDescription")!=""):
+        open_file = open("note.txt","a")
+        note_details = flask.request.args.get("noteDescription")
+        open_file.write(note_details +"\n")
+        open_file.close()
+    else:
+        return "No Note Added"
+    
