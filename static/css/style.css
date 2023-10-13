@@ -6,3 +6,31 @@
     align-items: center;
     height: 100vh;
 }
+/* welocome msg */
+#welcomeMsg
+{
+    text-align: center;
+}
+/* search input  and search button*/
+#search,#searchBtn
+{
+    display: inline;
+
+}
+/* container for dispaly notes */
+#NotesContainer{
+    background-color: #EEEEEE;
+    height: 100vh;
+}
+/* container for add button and title */
+#addContainer{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+
+}
+/* note textarea  */
+#noteDescription{
+    resize: none;
+    width: 100%;
+}
