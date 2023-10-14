@@ -1,3 +1,8 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: rgb(32, 30, 30);
+}
 /* center the content of index page  */
 #WelcomeContainer
 {
@@ -33,4 +38,30 @@
 #noteDescription{
     resize: none;
     width: 100%;
+}
+/* card container */
+.card{
+    margin-bottom: 40px;
+    height: 150px;
+    margin-right: 40px;
+}
+/* result of search */
+.searchResult{
+    text-align: center;
+    background-color: #EEEEEE;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* login form username  */
+#login{
+    background-color: #EEEEEE;
+    height: 150px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
 }

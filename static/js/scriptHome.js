@@ -2,6 +2,8 @@ const welcomeMsg = document.getElementById("welcomeMsg");
 const addBtn = document.getElementById("addBtn");
 const noteDescription = document.getElementById("noteDescription");
 const cardsContainer = document.getElementById("cardsContainer");
+const logOutBtn = document.getElementById("logOutBtn");
+
 
 // function for creating cards and added it into home page
 function createNoteCards()
@@ -36,23 +38,21 @@ function storeDataLocalStorage() {
 
     }
 
+myNote="";
 }
-    // function search for a note
-        function search(){
-            
+  
+// function to delete the localStorage
 
+function logOut(){
+   localStorage.clear();
 
-        }
-
-
-
-
-
+    
+}
 
     // display username in local storage
     if (localStorage.getItem("userName") != null) {
-        let user = localStorage.getItem("userName");
-        welcomeMsg.innerText = `Welcome ${user}`;
+        let msg = localStorage.getItem("greeting");
+        welcomeMsg.innerText =msg;
     }
 
 
@@ -69,6 +69,6 @@ if (localStorage.getItem("Notes") !=null) {
 
 
 
-addBtn.addEventListener("click", storeDataLocalStorage)
-
+addBtn.addEventListener("click", storeDataLocalStorage);
+logOutBtn.addEventListener("click",logOut);
 

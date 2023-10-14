@@ -42,15 +42,18 @@ def add_note():
     
 @app.route("/search")
 def search_note():
+    get_page = get_html("search")
     AllUserNotes = open_note_file()
     notes = ""
     search_note = flask.request.args.get("search")
-    for line in AllUserNotes:
-        if(line.find(search_note)!=-1):
-            notes+="<p>"+line+"</p> <hr>"
-    if(notes == ""):
-        return "<p> No results found </P>"
+    if(search_note!=""):
+        for line in AllUserNotes:
+            if(line.lower().find(search_note.lower())!=-1):
+                notes+="<p class='searchResult'>"+line+"</p> <hr>"
+        if(notes == ""):
+            return get_page.replace("$$SearchResult$$","<p class='searchResult'> No results found </P>")
+        else:
+            return get_page.replace("$$SearchResult$$", notes)
     else:
-        return notes
-
+        return flask.redirect('/home')
     
