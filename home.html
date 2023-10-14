@@ -21,10 +21,10 @@
     <h2 id="welcomeMsg"></h2>
 
     <div>
-        <form action="" method="get">
+        <form action="/search" method="get">
             <div class="mb-3 text-center">
-                <input type="text" class="form-control w-25" id="search" placeholder="Search">
-                <input type="button" value="Search" id="searchBtn">
+                <input type="text" class="form-control w-25" id="search" placeholder="Search" name="search">
+                <input type="submit" value="Search" id="searchBtn">
 
             </div>
         </form>
@@ -35,6 +35,7 @@
         <div class="container">
 
             <div id="addContainer">
+
                 <h4>Your Notes</h4>
 
 
@@ -45,6 +46,12 @@
             </div>
 
 
+                <div class="row"  id="cardsContainer">
+
+               
+
+                    
+                </div>
 
             <!-- Modal -->
             <div class="modal fade" id="addNotes" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
