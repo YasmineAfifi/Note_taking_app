@@ -31,7 +31,7 @@ def home_page():
 # function to add note in note.txt and add it into home page
 @app.route("/addNote")
 def add_note():
-    if(flask.request.args.get("noteDescription")!=""):
+    if flask.request.args.get("noteDescription")!="":
         open_file = open("note.txt","a")
         note_details = flask.request.args.get("noteDescription").strip()
         open_file.write(note_details +"\n")
@@ -46,11 +46,11 @@ def search_note():
     AllUserNotes = open_note_file()
     notes = ""
     search_note = flask.request.args.get("search")
-    if(search_note!=""):
+    if search_note!="":
         for line in AllUserNotes:
             if(line.lower().find(search_note.lower())!=-1):
                 notes+="<p class='searchResult'>"+line+"</p> <hr>"
-        if(notes == ""):
+        if notes == "":
             return get_page.replace("$$SearchResult$$","<p class='searchResult'> No results found </P>")
         else:
             return get_page.replace("$$SearchResult$$", notes)
