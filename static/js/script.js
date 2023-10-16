@@ -1,6 +1,6 @@
 const indexBtn = document.getElementById("indexBtn");
 const userName = document.getElementById("userName");
-let welcomeMessage = ""
+let welcomeMessage = "";
 
 // save the username in localStorage
 
